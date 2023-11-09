@@ -62,6 +62,10 @@ plus.onclick =() =>{
     if(number1+number2==number3){
         score++;
         randomise();
+    clearInterval(interval);
+
+        startTimer()
+
     }else{
         gameOver();
     }
@@ -75,6 +79,10 @@ minus.onclick =() =>{
     if(number1-number2==number3){
         score++
         randomise();
+    clearInterval(interval);
+
+        startTimer()
+
     }else{
         gameOver();
     }
@@ -88,6 +96,10 @@ mul.onclick =() =>{
     if(number1*number2==number3){
         score++
         randomise();
+    clearInterval(interval);
+
+        startTimer()
+
     }else{
         gameOver();
     }
@@ -101,6 +113,9 @@ divide.onclick =() =>{
     if(Math.floor(number1/number2)==number3){
         score++
         randomise();
+    clearInterval(interval);
+
+        startTimer()
     }else{
         gameOver();
     }
@@ -114,6 +129,8 @@ modulus.onclick =() =>{
     if(number1%number2==number3){
         score++
         randomise();
+    clearInterval(interval);
+        startTimer()
     }else{
         gameOver();
     }
@@ -126,18 +143,20 @@ function gameOver(){
 
 // Iteration 7: Making Timer functional
 
-function startTimer(){
-    let time = 15;
-    timerBox.textContent = time;
-    clearInterval(interval);
-    setInterval(()=>{
-        time--;
-        timerBox.textContent=time;
-        if(time==0){
-            gameOver()
 
+    function startTimer(){
+        let time =20;
+        timerBox.textContent = time;
+        clearInterval(interval);
+        interval = setInterval(()=>{
+        time--;
+        timerBox.textContent = time;
+    
+        if(time==0){
+            gameover()
         }
-    },1000);
+    
+        },1000)
     
 }
 
